@@ -13,9 +13,9 @@
     <img src="#">
     <a id="home-page" href="/users">Global conVoh</a>
     <ul class="right">
-      <li>
+      <li id="login">
       <% if (user) { %>
-        <a href="/logout">Log Out</a>
+        <a href="/logout">Log Out</a> <a href="/">Profile</a>
       <% } else { %>
         <a href="/auth/google">Login with Google</a>
       <% } %>

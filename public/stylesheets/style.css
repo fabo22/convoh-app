@@ -73,6 +73,18 @@ nav > #home-page {
   margin-right: 145vh;
 }
 
-#nsfw-tag {
-  color: red;
+#login > a {
+  margin-left: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+#login > a:hover {
+  color: white;
+  background-color: #598f2b;
+}
+
+nav > ul {
+  list-style: none;
 }
