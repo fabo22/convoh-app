@@ -1,6 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const reactionSchema = new Schema ({
+  liked: Boolean
+}, {
+  timestamps: true
+});
+
+const commentSchema = new Schema ({
+  content: {
+    type: String,
+    required: true
+  },
+  createdBy: Schema.Types.ObjectId
+}, {
+  timestamps: true
+});
+
 const postSchema = new Schema({
   title: {
       type: String,
@@ -15,8 +31,8 @@ const postSchema = new Schema({
     ref: 'User'
   },
   googleId: String,
-  comments: [],
-  reactions: []
+  comments: [commentSchema],
+  reactions: [reactionSchema]
 }, {
   timestamps: true
 });
