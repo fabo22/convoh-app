@@ -11,8 +11,9 @@ require('dotenv').config();
 require('./config/database');
 require('./config/passport');
 
-var indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users')
+var indexRoutes = require('./routes/index');
+const postsRoutes = require('./routes/posts');
+const usersRoutes = require('./routes/users');
 
 var app = express();
 
@@ -26,7 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(session({
-  secret: 'SEI Rocks!',
+  secret: 'ConvOh!',
   resave: false,
   saveUninitialized: true
 }))
@@ -35,8 +36,10 @@ app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/', usersRouter);
+app.use('/', indexRoutes);
+app.use('/users', usersRoutes);
+app.use('/posts', postsRoutes);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

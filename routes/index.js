@@ -1,5 +1,5 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const passport = require('passport');
 
 /* GET home page. */
@@ -22,7 +22,7 @@ router.get('/oauth2callback', passport.authenticate(
 
 router.get('/logout', function(req, res) {
   req.logout();
-  res.redirect('/users');
+  res.redirect('/posts');
 });
 
 module.exports = router;

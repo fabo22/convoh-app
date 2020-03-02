@@ -1,3 +1,17 @@
 <%- include('../partials/header') %>
+<div class="intro">
+  <% if (user) { %>
+  <h1> <%= user.name %>'s Profile </h1>
+  <% if (user.avatar)  { %>
+    <img src="<%=user.avatar%>" class="circle responsive-img" width="400">
+  <% } else { %>
+  <img src="images/convoh-logo.png" class="circle responsive-img" width="400">
+  <% } %>
+  <% } else { %>
+    <h1>Welcome to ConvOh!</h1>
+    <h2>Connect with different people from different backgrounds.<br><br>Share your opinions, and don't forget to have fun!<br><br>This is ConvOh.</h2>
+    <h2>Login with Google to get started!</h2>
+  <% } %>
+</div>
 
 <%- include('../partials/footer') %>

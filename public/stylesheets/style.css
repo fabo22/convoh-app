@@ -20,11 +20,11 @@ body > nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px 0 30px;
+  padding: 0 30px 0 30px;
 }
 
 nav > img {
-  width: 34px;
+  width: 60px;
   object-fit: contain;
   margin-right: auto;
 }
@@ -34,8 +34,8 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
-  padding: 1vh;
+  background-color: #ebe5e5;
+  padding: 2vh;
   overflow-y: scroll;
 }
 
@@ -50,19 +50,14 @@ nav > a {
   border-radius: 5px;
 }
 
-nav > a:hover {
-  color: white;
-  background-color: #598f2b;
-}
-
 nav > a.active {
   color: white;
 }
 
 h1 {
+  margin: 0;
   color: white;
   background-color: #7bb746;
-  width: 120vh;
   padding: 1vh;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
@@ -70,7 +65,9 @@ h1 {
 }
 
 nav > #home-page {
-  margin-right: 145vh;
+  margin-right: auto;
+  margin-left: 150px;
+  font-size: 4vmin;
 }
 
 #login > a {
@@ -87,4 +84,21 @@ nav > #home-page {
 
 nav > ul {
   list-style: none;
+}
+
+h2 {
+  text-align: center;
+}
+
+.intro {
+  background-color: white;
+  height: 100vh;
+  width: 120vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+div > img {
+  align-self: center;
 }
