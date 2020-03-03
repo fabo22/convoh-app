@@ -12,7 +12,11 @@ const commentSchema = new Schema ({
     type: String,
     required: true
   },
-  createdBy: Schema.Types.ObjectId
+  username: String,
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
 }, {
   timestamps: true
 });
@@ -26,10 +30,11 @@ const postSchema = new Schema({
       type: String,
       required: true
   },
-  displayName: {
+  user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
+  username: String,
   tag: String,
   googleId: String,
   comments: [commentSchema],

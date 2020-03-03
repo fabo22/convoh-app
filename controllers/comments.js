@@ -7,9 +7,19 @@ module.exports = {
 
 function create(req, res) {
     Post.findById(req.params.id, function(err, post) {
-        post.comments.push(req.body);
+        const comment = {...req.body, user: req.user, username: req.user.name};
+        post.comments.push(comment);
         post.save(function(err) {
             res.redirect(`/posts/${post._id}`); 
         });
     });
 }
+
+// function create(req, res) {
+//     const post = {...req.body, user: req.user, username: req.user.name};
+//     Post.create(post, err => {
+//         post.comments.push(req.body);
+//         if (err) return res.redirect(`/posts/${post._id}`);
+//         res.redirect(`/posts/${post._id}`);
+//     })
+//   }

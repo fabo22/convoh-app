@@ -22,16 +22,11 @@ function show(req, res) {
   }
 
 function create(req, res) {
-    for (let key in req.body) {
-      if (req.body[key] === '') delete req.body[key];
-    }
-    const post = new Post(req.body);
-    post.save(function(err) {
-      // one way to handle errors
-      if (err) return res.redirect('/posts/new');
-       res.redirect('/posts');
-    //   res.redirect(`/posts/${post._id}`);
-    });
+    const post = {...req.body, user: req.user, username: req.user.name};
+    Post.create(post, err => {
+        if (err) return res.redirect('/posts');
+        res.redirect('/posts');
+    })
   }
 
 function newPost(req, res) {
