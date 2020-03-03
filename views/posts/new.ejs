@@ -4,9 +4,9 @@
     <h1>New ConvOh</h1>
     <form id="new-form" action="/posts" method="POST">
         <label>Title:</label>
-        <input id="title" type="text" name="title" autocomplete="off" required="true" maxlength="150">
+        <input id="title" type="text" name="title" autocomplete="off" required="true" maxlength="300">
         <label>Content:</label>
-        <input id="content" type="text" name="content" autocomplete="off" required="true" value="What's on your mind?" maxlength="280">
+        <textarea class="content" type="text" name="content" autocomplete="off" required="true" value="What's on your mind?" maxlength="15000"></textarea>
         <label id="tag-title">Tag:</label>
         <select id="tag-section" name="tag">
           <option class="tag "value="ConvOh">ConvOh</option>
@@ -19,8 +19,10 @@
           <option class="tag" value="Videogames">Videogames</option>
           <option class="tag" value="Film">Films</option>
           <option class="tag" value="Cars">Cars</option>
+          <option class="tag" value="Culinary">Culinary</option>
           <option class="tag" value="Television">Television</option>
           <option class="tag" value="Politics">Politics</option>
+          <option class="tag" value="Misc">Misc.</option>
         </select>
         <input id="convoh-submit" type="submit" value="Add ConvOh">
       </form>

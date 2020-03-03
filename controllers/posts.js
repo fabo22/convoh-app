@@ -7,15 +7,14 @@ module.exports = {
     create,
     show
 };
+
 function show(req, res) {
-    Post.findById(req.params.id)
-      .populate('displayName').exec(function(err, post) {
-      User.find(
-        {_id: {$nin: post.displayName}},
+    Post.findById(req.params.id, function(err, post) {
+      User.find({_id: {$nin: post.username}},
         function(err, users) {
           console.log(users);
           res.render('posts/show', {
-            post, user: req.user
+            user: req.user, username: req.user.name, post
           });
         });
     });

@@ -2,14 +2,15 @@
 
 <div class="intro">
     <h1>Welcome to ConvOh!</h1>
-    <a href="/posts/new">Click here to start a ConvOh!</a>
+    <a id="start-convoh" href="/posts/new">Start ConvOh</a>
     <% posts.forEach(function(post) { %>
-      <div>
-        <h2><%= post.title %></h2>
-        <h2>By: <%= post.username %></h2>
-        <h2><%= post.tag %></h2>
-        <a href="/posts/<%= post._id %>">Join the ConvOh</a>
+      <a id="post" href="/posts/<%= post._id %>">
+      <div id="post-container">
+        <p id="username">By <%= post.username %> Posted <%=post.createdAt.toLocaleDateString()%></p>
+          <p id="title" href="/posts/<%= post._id %>"><%= post.title %></p>
+        <div id="tag-container"><p id="tag"><%= post.tag %></p></div>
       </div>
+    </a>
       <% }); %>
 </div>
 
