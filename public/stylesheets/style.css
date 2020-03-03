@@ -102,3 +102,28 @@ h2 {
 div > img {
   align-self: center;
 }
+
+#new-form {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  width: 100vh;
+  align-self: center;
+  border: 10px solid #7bb746;
+  padding: 30px;
+  
+}
+
+#content, #title, .tag, #convoh-submit {
+  align-self: center;
+  margin: 50px;
+}
+
+#tag-title {
+  font-size: 20px;
+}
+
+#tag-section {
+  width: 100px;
+  align-self: center;
+}

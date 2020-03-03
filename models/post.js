@@ -30,6 +30,7 @@ const postSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
+  tag: String,
   googleId: String,
   comments: [commentSchema],
   reactions: [reactionSchema]

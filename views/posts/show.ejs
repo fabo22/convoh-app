@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<div class="intro">
+    <h1>Welcome to ConvOh!</h1>
+    <section id="show-page">
+      <div><%= post.title %></div>
+      <div><%= post.content %></div>
+      <div><%= post.tag %></div>
+    </section>
+</div>
+
+
+<% if (post.comments.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Content</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let total = 0 %>
+      <% post.comments.forEach(function(comment) { %>
+        <tr>
+          <td><%= comment.createdAt.toLocaleDateString() %></td>
+          <td><%= comment.content %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Comments Yet</h5>
+<% } %>
+  
+<%- include('../partials/footer') %>
