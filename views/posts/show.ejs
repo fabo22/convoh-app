@@ -22,24 +22,24 @@
 
 
 <% if (post.comments.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Content</th>
-        <th>User</th>
-      </tr>
-    </thead>
-    <tbody>
+    <div id="comments-section">
       <% post.comments.forEach(function(comment) { %>
-        <tr>
-          <td><%= comment.createdAt.toLocaleDateString() %></td>
-          <td><%= comment.content %></td>
-          <td><%= comment.username %></td>
-        </tr>
-      <% }); %>
-    </tbody>
-  </table>
+        <p><%= comment.content %></p>
+          <p>Posted by <strong><%= comment.username %></strong> on <%= comment.createdAt.toLocaleDateString() %></p>
+          <% if (comment.user.equals(user && user._id)) { %>
+            <div id="update-delete">
+              <label for="comment-edit">Edit Comment:</label>
+              <form action="/comments/<%= comment._id %>?_method=PUT" method="POST" class ="edit-form">
+                <textarea name="content" id="comment-edit"><%= comment.content %></textarea>
+                <input id="edit" type="submit" value="Update Comment">
+              </form>
+              <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                  <input id="delete" type="submit" value="Remove Comment">
+              </form>
+          </div>
+        <% } %>
+    <% }); %>
+      </div>
 <% } else { %>
   <h5>No Comments Yet</h5>
 <% } %>

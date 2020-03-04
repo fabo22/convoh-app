@@ -207,7 +207,34 @@ textarea {
   width: 110vh;
 }
 
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+
 #submit {
   width: 10vh;
   align-self: center;
+}
+
+#delete {
+  color: green;
+  background-color: black;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+#edit {
+  color: green;
+  background-color: black;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+#comment-edit {
+  width: 30vh;
+  height: 6vh;
+}
+
+#comments-section {
+  text-align: center;
 }
