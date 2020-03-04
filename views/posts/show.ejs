@@ -31,12 +31,11 @@
       </tr>
     </thead>
     <tbody>
-      <% let total = 0 %>
       <% post.comments.forEach(function(comment) { %>
         <tr>
           <td><%= comment.createdAt.toLocaleDateString() %></td>
           <td><%= comment.content %></td>
-          <td><a href="/"><%= comment.username %></a></td>
+          <td><%= comment.username %></td>
         </tr>
       <% }); %>
     </tbody>

@@ -14,12 +14,3 @@ function create(req, res) {
         });
     });
 }
-
-// function create(req, res) {
-//     const post = {...req.body, user: req.user, username: req.user.name};
-//     Post.create(post, err => {
-//         post.comments.push(req.body);
-//         if (err) return res.redirect(`/posts/${post._id}`);
-//         res.redirect(`/posts/${post._id}`);
-//     })
-//   }

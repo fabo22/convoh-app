@@ -4,6 +4,7 @@
   <h1> <%= user.name %>'s Profile </h1>
   <% if (user.avatar)  { %>
     <img src="<%=user.avatar%>" class="circle responsive-img" width="400">
+    <a href="profiles/new">Please create your profile</a>
   <% } else { %>
   <img src="images/convoh-logo.png" class="circle responsive-img" width="400">
   <% } %>
