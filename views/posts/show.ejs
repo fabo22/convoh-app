@@ -3,12 +3,11 @@
 <div class="intro">
     <div id="lower-heading">
         <h1><%= post.title %></h1>
-        <a href="/"><%= post.username %></a>
-        <p id="show-tag"><%= post.tag %></p>
+        <p><%= post.username %> says:</p>
     </div>
     <section id="show-page">
       <div id="content-container">
-          <p id="post-content"><%= post.content %></p>
+          <p id="post-content"><strong><%= post.content %></strong></p>
           <p>Posted at <%= post.createdAt.toLocaleTimeString() %></p>
     </div>
     </section>
@@ -23,12 +22,16 @@
 
 <% if (post.comments.length) { %>
     <div id="comments-section">
+      <h2>Comments</h2>
       <% post.comments.forEach(function(comment) { %>
-        <p><%= comment.content %></p>
+        <div id="each-comment">
+        <p><strong><%= comment.content %></strong></p>
           <p>Posted by <strong><%= comment.username %></strong> on <%= comment.createdAt.toLocaleDateString() %></p>
+          <p>Last Update at <%= comment.updatedAt.toLocaleTimeString() %></p>
+        </div>
           <% if (comment.user.equals(user && user._id)) { %>
             <div id="update-delete">
-              <label for="comment-edit">Edit Comment:</label>
+              <label for="comment-edit">Edit Your Comment:</label>
               <form action="/comments/<%= comment._id %>?_method=PUT" method="POST" class ="edit-form">
                 <textarea name="content" id="comment-edit"><%= comment.content %></textarea>
                 <input id="edit" type="submit" value="Update Comment">

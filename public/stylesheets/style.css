@@ -117,17 +117,19 @@ div > img {
   background-color: #e9f5df;
 }
 
-.content, #title, .tag, #convoh-submit {
+.content, #title, #tag-section, #convoh-submit {
   align-self: center;
-  margin: 50px;
+  margin: 20px;
 }
 
-#tag-title {
-  font-size: 20px;
+.new-title {
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #tag-section {
-  width: 100px;
+  width: 15vh;
+  font-size: 15px;
   align-self: center;
 }
 
@@ -205,6 +207,7 @@ textarea {
 #post-content {
   font-family: 'Montserrat', sans-serif;
   width: 110vh;
+  font-size: 20px;
 }
 
 p {
@@ -237,4 +240,28 @@ p {
 
 #comments-section {
   text-align: center;
+  border: 1px solid black;
+  width: 120vh;
+  padding: 20px;
+  margin-top: 5vh;
+  background-color: white;
+}
+
+#title-text {
+  font-family: 'Montserrat', sans-serif;
+  width: 35vh;
+  height: 10vh;
+  font-size: 20px;
+}
+
+#content-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+#each-comment {
+  border: 1px solid black;
+  margin-bottom: 2vh;
+  background-color: #e9f5df;
+  padding: 10px;
 }
