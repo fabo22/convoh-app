@@ -14,7 +14,7 @@ function show(req, res) {
       User.find({_id: {$nin: post.username}}, function(err, users) {
           console.log(users);
           res.render('posts/show', {
-            user: req.user, username: req.user.name, post
+            user: req.user, username: req.user.name, userAvatar: req.user.avatar, post
         });
       });
     });
@@ -27,7 +27,7 @@ function deletePost(req, res) {
 }
 
 function create(req, res) {
-    const post = {...req.body, user: req.user, username: req.user.name};
+    const post = {...req.body, user: req.user, username: req.user.name, userAvatar: req.user.avatar};
     Post.create(post, err => {
         if (err) return res.redirect('/posts');
         res.redirect('/posts');

@@ -170,7 +170,7 @@ textarea {
 
 #post-container > #username  {
   background-color: #0c4b07;
-  color: #7bb746;
+  color: #e9f5df;
   align-self: center;
   font-family: 'Montserrat', sans-serif;
 }
@@ -189,7 +189,7 @@ textarea {
 #tag-container > #tag {
   font-family: 'Montserrat', sans-serif;
   background-color: #0c4b07;
-  color: #7bb746;
+  color: #e9f5df;
   padding: 1vh;
 }
 
@@ -252,11 +252,13 @@ p {
   width: 35vh;
   height: 10vh;
   font-size: 20px;
+  align-self: center;
 }
 
 #content-text {
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
+  align-self: center;
 }
 
 #each-comment {
@@ -264,4 +266,20 @@ p {
   margin-bottom: 2vh;
   background-color: #e9f5df;
   padding: 10px;
+}
+
+#profile-picture {
+  border-radius: 50%;
+  border: 4px solid #7bb746;
+}
+
+#content-container {
+  border: 1px solid black;
+  background-color: #e9f5df;
+}
+
+.content {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  align-self: center;
 }

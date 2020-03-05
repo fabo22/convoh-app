@@ -35,6 +35,7 @@ const postSchema = new Schema({
     ref: 'User'
   },
   username: String,
+  userAvatar: String,
   tag: String,
   googleId: String,
   comments: [commentSchema],
