@@ -2,6 +2,7 @@
   box-sizing: border-box;
   font-family: Helvetica;
   color: black;
+  outline: 0vmin;
 }
 
 body {
@@ -202,12 +203,19 @@ textarea {
   display: flex;
   flex-direction: column;
   align-self: center;
+  border: 1px solid black;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e9f5df;
+  width: 110vh;
+  padding-top: 0px;
 }
 
 #post-content {
   font-family: 'Montserrat', sans-serif;
   width: 110vh;
   font-size: 20px;
+  padding: 10px;
 }
 
 p {
@@ -220,22 +228,25 @@ p {
 }
 
 #delete {
-  color: green;
-  background-color: black;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  align-self: center;
+  width: 25vh;
+  margin-top: 10px;
+}
+
+#delete:hover {
+  border: 1px solid black;
 }
 
 #edit {
-  color: green;
-  background-color: black;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
+  color: #e9f5df;
+  background-color: #0c4b07;
+  align-self: center;
 }
 
 #comment-edit {
   width: 30vh;
   height: 6vh;
+  align-self: center;
 }
 
 #comments-section {
@@ -282,4 +293,24 @@ p {
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   align-self: center;
+}
+
+button {
+  height: 3vh;
+  width: 10vh;
+  font-size: 2vh;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgba(0,0,0,0);
+  border: 0px solid black;
+}
+
+#likes-text {
+  font-size: 2vh;
+}
+#edit-button {
+  width: 25vh;
+}
+
+#edit-button:hover {
+  border: 1px solid black;
 }

@@ -9,12 +9,14 @@
     <section id="show-page">
       <div id="content-container">
           <p id="post-content"><strong><%= post.content %></strong></p>
-          <p>Posted at <%= post.createdAt.toLocaleTimeString() %></p>
+          <p>Posted at <%= post.createdAt.toLocaleTimeString() %> Tagged as <strong><%= post.tag %></strong></p>
     </div>
     </section>
-    <br><br><h2>Add to the ConvOh</h2>
+
+
     <form id="add-comment-form" method="POST"
-      action="/posts/<%= post._id %>/comments">
+    action="/posts/<%= post._id %>/comments">
+    <br><br><h2>Add to the ConvOh</h2>
       <textarea class ="content" name="content"></textarea>
       <input id="submit" type="submit" value="Comment">
     </form>
@@ -27,20 +29,20 @@
       <% post.comments.forEach(function(comment) { %>
         <div id="each-comment">
         <p><strong><%= comment.content %></strong></p>
-          <p>Posted by <strong><%= comment.username %></strong> on <%= comment.createdAt.toLocaleDateString() %></p>
-          <p>Last Update at <%= comment.updatedAt.toLocaleTimeString() %></p>
-        </div>
-          <% if (comment.user.equals(user && user._id)) { %>
-            <div id="update-delete">
-              <label for="comment-edit">Edit Your Comment:</label>
-              <form action="/comments/<%= comment._id %>?_method=PUT" method="POST" class ="edit-form">
-                <textarea name="content" id="comment-edit"><%= comment.content %></textarea>
+        <p>Posted by <strong><%= comment.username %></strong> on <%= comment.createdAt.toLocaleDateString() %></p>
+        <% if (comment.user.equals(user && user._id)) { %> 
+          <button id="edit-button"><strong>Edit Comment ✎</strong></button>
+          <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+              <button id="delete" type="submit"><strong>Delete Comment 🗑️ </strong></button>
+          </form>
+        <%} %>
+        <p>Last Update at <%= comment.updatedAt.toLocaleTimeString() %></p>
+      </div>
+      <% if (comment.user.equals(user && user._id)) { %>
+              <form id="update-delete" action="/comments/<%= comment._id %>?_method=PUT" method="POST" class ="edit-form">
+                <textarea name="content" id="comment-edit"><%= comment.content %></textarea><br>
                 <input id="edit" type="submit" value="Update Comment">
               </form>
-              <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                  <input id="delete" type="submit" value="Remove Comment">
-              </form>
-          </div>
         <% } %>
     <% }); %>
       </div>

@@ -13,6 +13,7 @@ A social media application where you can start a conversation with others! Conve
 - Express
 - Mongoose
 - mongoDB
+- Google OAuth
 
 ## Getting Started
 ### Link to Trello planning board
