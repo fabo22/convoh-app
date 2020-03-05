@@ -4,16 +4,17 @@
 A social media application where you can start a conversation with others! Converse about news, memes, sports, videogames, and more!
 
 ## Screenshots
+### Home Page
 ![Home Page](public/images/home-page.png)
-Home Page
+### New Post Page
 ![Home Page](public/images/new-page.png)
-New Post Page
+### Info Page
 ![Home Page](public/images/profile-page.png)
-Info Page
+### Post Page
 ![Home Page](public/images/show-page.png)
-Post Page
+### Comments Section
 ![Home Page](public/images/comments-section.png)
-Comments Section
+
 ## Technologies
 - Javascript
 - HTML
