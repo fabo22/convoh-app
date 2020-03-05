@@ -314,3 +314,7 @@ button {
 #edit-button:hover {
   border: 1px solid black;
 }
+
+#update-delete {
+  display: none;
+}
